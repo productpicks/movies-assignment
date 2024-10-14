@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+.authLayoutStyle {
+  border-bottom-right-radius: 60% 600px;
+}
+
+.data-preview-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.auth-input input:-webkit-autofill {
+  -webkit-text-fill-color: #fff !important;
+}
+.alternating-rows tr:nth-child(even) {
+  background-color: #EBF0FA; /* Equivalent to Tailwind's gray-100 */
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 768px) {
+  .authLayoutStyle {
+    border-bottom-right-radius: 45% 150px;
+  }
+}
