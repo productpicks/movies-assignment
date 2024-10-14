@@ -5,13 +5,7 @@ import { NextRequest, NextResponse } from 'next/server';
 
 const matches = [
   '/',
-  '/app/hospitals',
-  '/app/users',
-  '/utilities/janitorial',
-  '/utilities/security',
-  '/utilities/ct-scan',
-  '/utilities/mepg',
-  '/contact/profile',
+
 ];
 
 export default async function middleware(req: NextRequest) {
