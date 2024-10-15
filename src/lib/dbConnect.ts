@@ -6,7 +6,9 @@ declare global {
   var mongoose: any // This must be a `var` and not a `let / const`
 }
 
-const MONGODB_URI = process.env.MONGODB_URI;
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb+srv://muneebsaeed:VKiA0hEuEKNbdzqf@cluster0.utlxu.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
+
+console.log("===== mongo uri in db connect config", MONGODB_URI);
 
 if (!MONGODB_URI) {
   throw new Error(
