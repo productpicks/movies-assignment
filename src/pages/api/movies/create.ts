@@ -66,7 +66,10 @@ const handler: NextApiHandler = async (
 
     const token = authHeader.split(" ")[1];
     // const decoded = jwt.decode(token);
-    const decoded = jwt.verify(token, process.env.JWT_SECRET as string) as JwtPayload;
+    const decoded = jwt.verify(
+      token,
+      process.env.JWT_SECRET || ("movies_assignment" as string)
+    ) as JwtPayload;
     const userId = decoded?.userId;
 
     if (!userId) {
