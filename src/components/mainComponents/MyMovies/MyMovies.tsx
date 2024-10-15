@@ -55,7 +55,7 @@ export default function MyMovies() {
     <div className={`flex justify-center  w-full h-full `}>
       <RGMButton
         btnText="Add a new movie"
-        classnames="w-full bg-btnColor text-white h-[50px] font-[500] text-[16px] w-[186px]"
+        classnames="w-full bg-btnColor text-white h-[50px] font-[500] text-[16px] w-[186px] mb-4"
         onclick={() => router.push("/createnewmovie")}
       />
       {loading ? (
