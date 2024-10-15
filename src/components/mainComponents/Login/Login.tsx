@@ -1,11 +1,8 @@
 "use client";
-import { useState } from "react";
-import Link from "next/link";
-import dynamic from "next/dynamic";
+import React, { useState } from "react";
 import { toast } from "react-toastify";
 import { useRouter } from "next/navigation";
 import { Checkbox } from "@nextui-org/react";
-import { AuthLayoutProps } from "@/src/interfaces";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Controller, useForm } from "react-hook-form";
 import { loginSchema } from "@/src/utils/schema/authSchema";
@@ -35,10 +32,7 @@ function Login() {
 
     const response = await loginWithEmail(data);
     if (response?.token) {
-      ManageStorage.setItem(
-        "access_token",
-        response.token
-      );
+      ManageStorage.setItem("access_token", response.token);
       setButtonSpinner(false);
       toast.success(`Login successful`);
       router.push("/movies");

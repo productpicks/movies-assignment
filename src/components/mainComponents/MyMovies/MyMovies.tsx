@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { getAllMovies } from "@/src/utils/services/service";
 import { LoadingCircle } from "@/src/utils/icons/icons";
@@ -53,6 +53,11 @@ export default function MyMovies() {
   console.log("allMoviesData", allMoviesData);
   return (
     <div className={`flex justify-center  w-full h-full `}>
+      <RGMButton
+        btnText="Add a new movie"
+        classnames="w-full bg-btnColor text-white h-[50px] font-[500] text-[16px] w-[186px]"
+        onclick={() => router.push("/createnewmovie")}
+      />
       {loading ? (
         <div className="flex items-center">
           <LoadingCircle />
@@ -72,7 +77,7 @@ export default function MyMovies() {
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
-                  stroke-width="1.5"
+                  strokeWidth="1.5"
                   stroke="currentColor"
                   className="size-6 ml-2"
                 >
